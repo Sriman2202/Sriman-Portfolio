@@ -12,8 +12,9 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-[100dvh] flex flex-col justify-center pt-20 pb-10 relative overflow-hidden"
+      className="flex flex-col justify-center pt-20 pb-16 relative overflow-hidden"
       style={{
+        minHeight: "100dvh",
         background: "linear-gradient(135deg, hsl(220,68%,14%) 0%, hsl(224,60%,22%) 50%, hsl(215,55%,30%) 100%)",
       }}
     >
@@ -37,91 +38,26 @@ export function Hero() {
       <div className="container px-4 mx-auto z-10 relative">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
 
-          {/* Blob photo frame */}
+          {/* Profile photo — cutout with bottom fade */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            className="mb-6 relative"
-            style={{ height: "320px", width: "300px" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-4"
           >
-            {/* Outer ring decoration */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute"
-              style={{
-                width: "260px", height: "260px",
-                top: "50%", left: "50%",
-                transform: "translate(-50%, -45%)",
-                border: "1.5px dashed hsl(175,80%,60%)",
-                borderRadius: "63% 37% 54% 46% / 55% 48% 52% 45%",
-                opacity: 0.45,
-              }}
-            />
-
-            {/* Organic blob */}
-            <motion.div
-              animate={{ borderRadius: [
-                "63% 37% 54% 46% / 55% 48% 52% 45%",
-                "40% 60% 45% 55% / 48% 62% 38% 52%",
-                "55% 45% 60% 40% / 60% 40% 55% 45%",
-                "63% 37% 54% 46% / 55% 48% 52% 45%",
-              ]}}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute"
-              style={{
-                width: "230px", height: "230px",
-                top: "50%", left: "50%",
-                transform: "translate(-50%, -45%)",
-                background: "linear-gradient(135deg, hsl(175,90%,42%), hsl(195,90%,55%))",
-                boxShadow: "0 0 50px hsl(185,90%,50% / 0.35)",
-              }}
-            />
-
-            {/* "+" markers */}
-            {[
-              { top: "4%",  left: "14%", size: 18, delay: 0 },
-              { top: "2%",  right: "10%", size: 14, delay: 0.5 },
-              { top: "44%", left: "1%",  size: 13, delay: 0.9 },
-              { top: "46%", right: "1%", size: 17, delay: 0.3 },
-              { top: "86%", left: "18%", size: 13, delay: 0.7 },
-              { top: "84%", right: "16%",size: 15, delay: 1.1 },
-            ].map((pos, i) => (
-              <motion.span
-                key={i}
-                animate={{ opacity: [0.35, 1, 0.35], scale: [0.85, 1.15, 0.85] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: pos.delay }}
-                className="absolute font-bold select-none leading-none"
-                style={{
-                  top: pos.top,
-                  left: "left" in pos ? pos.left : undefined,
-                  right: "right" in pos ? pos.right : undefined,
-                  fontSize: pos.size,
-                  color: "hsl(175,90%,65%)",
-                }}
-              >+</motion.span>
-            ))}
-
-            {/* Floating cutout — bottom dissolved into blob */}
-            <motion.img
+            <img
               src={profileCutout}
               alt="Sriman S"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute z-10 select-none"
-              style={{
-                height: "300px",
-                width: "auto",
-                bottom: 0,
-                left: "50%",
-                transform: "translateX(-50%)",
-                objectFit: "contain",
-                WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 92%)",
-                maskImage: "linear-gradient(to bottom, black 60%, transparent 92%)",
-                filter: "drop-shadow(0 4px 24px rgba(0,210,210,0.25))",
-              }}
+              className="select-none"
               draggable={false}
+              style={{
+                height: "260px",
+                width: "auto",
+                display: "block",
+                WebkitMaskImage: "linear-gradient(to bottom, black 55%, transparent 95%)",
+                maskImage: "linear-gradient(to bottom, black 55%, transparent 95%)",
+                filter: "drop-shadow(0 6px 24px rgba(80,160,255,0.3))",
+              }}
             />
           </motion.div>
 
@@ -185,8 +121,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade into next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+      {/* Bottom fade into next section — starts after content */}
+      <div className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none"
         style={{ background: "linear-gradient(to bottom, transparent, hsl(210,25%,97%))" }} />
     </section>
   );
