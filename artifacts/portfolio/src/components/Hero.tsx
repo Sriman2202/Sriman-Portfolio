@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Download, Mail, Linkedin } from "lucide-react";
-import { Button } from "./ui/button";
 import profilePic from "@assets/Profile_Pic_1780658107623.jpeg";
 
 const btnHover = "hover:scale-105 active:scale-95 transition-transform duration-200";
@@ -11,10 +10,28 @@ export function Hero() {
   };
 
   return (
-    <section id="hero" className="min-h-[100dvh] flex flex-col justify-center pt-20 pb-10 relative overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-[100dvh] flex flex-col justify-center pt-20 pb-10 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, hsl(220,68%,14%) 0%, hsl(224,60%,22%) 50%, hsl(215,55%,30%) 100%)",
+      }}
+    >
+      {/* Decorative colour orbs */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-16 left-12 w-72 h-72 rounded-full blur-3xl opacity-30"
+          style={{ background: "hsl(200,80%,55%)" }} />
+        <div className="absolute bottom-24 right-16 w-96 h-96 rounded-full blur-3xl opacity-20"
+          style={{ background: "hsl(260,70%,65%)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl opacity-10"
+          style={{ background: "hsl(45,90%,60%)" }} />
+        {/* Subtle dot grid overlay */}
+        <div className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
+        />
       </div>
 
       <div className="container px-4 mx-auto z-10 relative">
@@ -26,7 +43,10 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <div className="w-32 h-32 rounded-full border-2 border-primary shadow-xl shadow-primary/10 overflow-hidden">
+            <div
+              className="w-36 h-36 rounded-full overflow-hidden shadow-2xl"
+              style={{ border: "3px solid rgba(255,255,255,0.35)", boxShadow: "0 0 40px rgba(100,180,255,0.25)" }}
+            >
               <img src={profilePic} alt="Sriman S" className="w-full h-full object-cover object-top" />
             </div>
           </motion.div>
@@ -35,7 +55,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
+            className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-white"
           >
             Sriman S
           </motion.h1>
@@ -44,7 +64,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl md:text-3xl text-muted-foreground font-medium mb-6"
+            className="text-2xl md:text-3xl font-medium mb-6"
+            style={{ color: "rgba(180,210,255,0.9)" }}
           >
             Associate Technical Consultant
           </motion.h2>
@@ -53,7 +74,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg text-muted-foreground max-w-2xl mb-10 leading-relaxed"
+            className="text-lg max-w-2xl mb-10 leading-relaxed"
+            style={{ color: "rgba(200,220,255,0.75)" }}
           >
             Building enterprise workflow solutions and helping organizations streamline business processes through low-code technology.
           </motion.p>
@@ -62,42 +84,36 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center gap-4"
           >
-            <a
-              href="/sriman-resume.pdf"
-              download="Sriman_S_Resume.pdf"
-              className={`cursor-pointer ${btnHover}`}
-            >
-              <Button size="lg" variant="outline" className="rounded-full bg-card pointer-events-none">
-                <Download className="mr-2 h-4 w-4" /> Download Resume
-              </Button>
+            <a href="/sriman-resume.pdf" download="Sriman_S_Resume.pdf" className={`cursor-pointer ${btnHover}`}>
+              <button className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full text-sm font-semibold border cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.12)", borderColor: "rgba(255,255,255,0.3)", color: "white", backdropFilter: "blur(8px)" }}>
+                <Download className="h-4 w-4" /> Download Resume
+              </button>
             </a>
 
-            <a
-              href="https://www.linkedin.com/in/srimanshanmugam"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`cursor-pointer ${btnHover}`}
-            >
-              <Button size="lg" variant="outline" className="rounded-full bg-card pointer-events-none">
-                <Linkedin className="mr-2 h-4 w-4" /> Connect on LinkedIn
-              </Button>
+            <a href="https://www.linkedin.com/in/srimanshanmugam" target="_blank" rel="noopener noreferrer" className={`cursor-pointer ${btnHover}`}>
+              <button className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full text-sm font-semibold border cursor-pointer"
+                style={{ background: "rgba(255,255,255,0.12)", borderColor: "rgba(255,255,255,0.3)", color: "white", backdropFilter: "blur(8px)" }}>
+                <Linkedin className="h-4 w-4" /> Connect on LinkedIn
+              </button>
             </a>
 
             <button
               onClick={scrollToContact}
-              className={`inline-flex items-center gap-2 px-8 min-h-10 rounded-full text-sm font-medium
-                bg-card border border-[var(--button-outline)] shadow-xs text-foreground cursor-pointer
-                hover:opacity-80 ${btnHover}`}
+              className={`inline-flex items-center gap-2 px-7 py-2.5 rounded-full text-sm font-semibold border cursor-pointer ${btnHover}`}
+              style={{ background: "rgba(255,255,255,0.12)", borderColor: "rgba(255,255,255,0.3)", color: "white", backdropFilter: "blur(8px)" }}
             >
               <Mail className="h-4 w-4" /> Contact Me
             </button>
           </motion.div>
-
-
         </div>
       </div>
+
+      {/* Bottom fade into next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, transparent, hsl(210,25%,97%))" }} />
     </section>
   );
 }
