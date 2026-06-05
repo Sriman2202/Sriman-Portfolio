@@ -61,6 +61,26 @@ export function Hero() {
             />
           </motion.div>
 
+          {/* Open to Work badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide select-none"
+            style={{
+              background: "rgba(34,197,94,0.12)",
+              border: "1px solid rgba(34,197,94,0.35)",
+              color: "rgba(134,239,172,0.95)",
+              backdropFilter: "blur(6px)",
+            }}
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+            </span>
+            Open to Work
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
