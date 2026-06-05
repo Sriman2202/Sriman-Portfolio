@@ -5,24 +5,19 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
-import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message Sent Successfully",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+    const body = `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`;
+    const mailto = `mailto:srimanshanmugam22@gmail.com?subject=${encodeURIComponent(form.subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
   };
 
   return (
@@ -57,7 +52,10 @@ export function Contact() {
             </div>
 
             <div className="space-y-4">
-              <a href="mailto:srimanshanmugam22@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group">
+              <a
+                href="mailto:srimanshanmugam22@gmail.com"
+                className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group cursor-pointer"
+              >
                 <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
                 </div>
@@ -102,36 +100,54 @@ export function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" required className="bg-background border-border focus-visible:ring-primary" />
+                  <Input
+                    id="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
+                    className="bg-background border-border focus-visible:ring-primary"
+                  />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" required className="bg-background border-border focus-visible:ring-primary" />
+                  <Input
+                    id="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    className="bg-background border-border focus-visible:ring-primary"
+                  />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" required className="bg-background border-border focus-visible:ring-primary" />
+                <Input
+                  id="subject"
+                  value={form.subject}
+                  onChange={handleChange}
+                  required
+                  className="bg-background border-border focus-visible:ring-primary"
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
+                  value={form.message}
+                  onChange={handleChange}
                   rows={5}
                   required
                   className="bg-background border-border focus-visible:ring-primary resize-none"
                 />
               </div>
-              <Button type="submit" disabled={isSubmitting} className="w-full rounded-xl" size="lg">
-                {isSubmitting ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    <Send className="w-4 h-4 mr-2" /> Send Message
-                  </>
-                )}
+              <Button type="submit" className="w-full rounded-xl" size="lg">
+                <Send className="w-4 h-4 mr-2" /> Send Message
               </Button>
             </form>
+            <p className="text-xs text-muted-foreground text-center mt-4">
+              Clicking "Send Message" will open your email app with the message pre-filled.
+            </p>
           </motion.div>
         </div>
       </div>
