@@ -76,7 +76,7 @@ export function Hero() {
               download="Sriman_S_Resume.pdf"
               className={`cursor-pointer ${btnHover}`}
             >
-              <Button size="lg" className="rounded-full shadow-lg shadow-primary/20 pointer-events-none">
+              <Button size="lg" variant="outline" className="rounded-full bg-card pointer-events-none">
                 <Download className="mr-2 h-4 w-4" /> Download Resume
               </Button>
             </a>
@@ -95,9 +95,8 @@ export function Hero() {
             <button
               onClick={scrollToContact}
               className={`inline-flex items-center gap-2 px-8 min-h-10 rounded-full text-sm font-medium
-                bg-card border border-border shadow-sm text-foreground cursor-pointer
-                hover:border-primary/50 hover:bg-primary/5 hover:text-primary
-                ${btnHover}`}
+                bg-card border border-[var(--button-outline)] shadow-xs text-foreground cursor-pointer
+                hover:opacity-80 ${btnHover}`}
             >
               <Mail className="h-4 w-4" /> Contact Me
             </button>
