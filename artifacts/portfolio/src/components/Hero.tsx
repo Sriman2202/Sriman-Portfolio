@@ -1,16 +1,9 @@
 import { motion } from "framer-motion";
-import { Download, Mail, Linkedin, Lightbulb, Target, Users, Zap } from "lucide-react";
+import { Download, Mail, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import profilePic from "@assets/Profile_Pic_1780658107623.jpeg";
 
 const btnHover = "hover:scale-105 active:scale-95 transition-transform duration-200";
-
-const GOALS = [
-  { title: "Technical Consulting", icon: <Lightbulb className="w-5 h-5" /> },
-  { title: "Business Analysis", icon: <Target className="w-5 h-5" /> },
-  { title: "Program Management", icon: <Users className="w-5 h-5" /> },
-  { title: "Digital Transformation Leadership", icon: <Zap className="w-5 h-5" /> },
-];
 
 export function Hero() {
   const scrollToContact = () => {
@@ -102,28 +95,6 @@ export function Hero() {
             </button>
           </motion.div>
 
-          {/* Aspirations */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="w-full max-w-3xl"
-          >
-            <p className="text-base text-muted-foreground italic mb-6">
-              "I am passionate about bridging the gap between business and technology."
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {GOALS.map((goal, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-center gap-2 p-4 rounded-xl bg-card border border-border hover:border-primary/40 hover:bg-primary/5 transition-colors duration-200"
-                >
-                  <span className="p-2 bg-primary/10 text-primary rounded-full">{goal.icon}</span>
-                  <span className="text-xs font-semibold text-foreground text-center leading-snug">{goal.title}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
 
         </div>
       </div>
