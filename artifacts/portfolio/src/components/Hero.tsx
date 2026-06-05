@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, Mail, Linkedin } from "lucide-react";
-import profilePic from "@assets/Profile_Pic_1780658107623.jpeg";
+import profileCutout from "../assets/profile_cutout.png";
 
 const btnHover = "hover:scale-105 active:scale-95 transition-transform duration-200";
 
@@ -38,17 +38,43 @@ export function Hero() {
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8"
+            transition={{ duration: 0.7 }}
+            className="mb-6 relative flex items-end justify-center"
+            style={{ height: "260px", width: "220px" }}
           >
+            {/* Rotating gradient ring behind photo */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 rounded-full"
+              style={{
+                background: "conic-gradient(from 0deg, hsl(200,90%,60%), hsl(260,80%,70%), hsl(320,70%,65%), hsl(45,90%,60%), hsl(200,90%,60%))",
+                filter: "blur(12px)",
+                opacity: 0.5,
+                width: "180px",
+                height: "180px",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+            {/* Soft glow beneath */}
             <div
-              className="w-36 h-36 rounded-full overflow-hidden shadow-2xl"
-              style={{ border: "3px solid rgba(255,255,255,0.35)", boxShadow: "0 0 40px rgba(100,180,255,0.25)" }}
-            >
-              <img src={profilePic} alt="Sriman S" className="w-full h-full object-cover object-top" />
-            </div>
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-36 h-8 rounded-full"
+              style={{ background: "radial-gradient(ellipse, rgba(100,180,255,0.4) 0%, transparent 70%)", filter: "blur(8px)" }}
+            />
+            {/* Floating cutout photo */}
+            <motion.img
+              src={profileCutout}
+              alt="Sriman S"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10 select-none"
+              style={{ height: "250px", width: "auto", objectFit: "contain", filter: "drop-shadow(0 8px 32px rgba(80,140,255,0.35))" }}
+              draggable={false}
+            />
           </motion.div>
 
           <motion.h1
