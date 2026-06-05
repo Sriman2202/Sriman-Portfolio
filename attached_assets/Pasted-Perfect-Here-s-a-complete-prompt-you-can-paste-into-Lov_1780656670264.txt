@@ -1,0 +1,327 @@
+Perfect. Here's a **complete prompt** you can paste into **Lovable, Bolt, v0, Cursor, Replit AI, or any AI website generator** to create your portfolio website.
+
+---
+
+# Portfolio Website Generation Prompt
+
+Create a modern, premium, recruiter-focused portfolio website for **Sriman S**, an Associate Technical Consultant and Appian Developer.
+
+## Design Requirements
+
+* Premium consulting-style design
+* Modern and professional
+* Dark navy blue, white, and subtle accent colors
+* Fully responsive (mobile, tablet, desktop)
+* Smooth animations and scrolling
+* Clean typography
+* Corporate consulting feel similar to Deloitte, Accenture, or McKinsey technology profiles
+* Fast loading
+* SEO optimized
+
+---
+
+# Hero Section
+
+Display a professional circular profile photo.
+
+Name:
+
+**Sriman S**
+
+Title:
+
+**Associate Technical Consultant | Appian Developer**
+
+Tagline:
+
+Building enterprise workflow solutions and helping organizations streamline business processes through low-code technology.
+
+Buttons:
+
+* Download Resume
+* Connect on LinkedIn
+* Contact Me
+
+Display quick highlights:
+
+* Appian Certified Associate Developer
+* Enterprise Application Development
+* Workflow Automation
+* Technical Consulting Aspirant
+
+---
+
+# About Me
+
+I am an Associate Technical Consultant and Appian Developer with experience in enterprise application development, workflow automation, and business process optimization.
+
+My interest in technology began during childhood, driven by curiosity about how software applications are built and how they impact people's daily lives. This passion led me to pursue Computer Science Engineering and build a career in software development.
+
+I started my professional journey through campus placement at IAMNEO, where I gained experience in program management operations and stakeholder coordination. Shortly afterward, I joined WNS Vuram as an Associate Technical Consultant, where I work on Appian-based enterprise applications, workflow automation, and business process optimization.
+
+I aspire to grow into Technical Consulting, Business Analysis, and Program Management roles where I can combine technology, business understanding, and stakeholder collaboration to drive meaningful outcomes.
+
+---
+
+# Stats Section
+
+Show animated counters:
+
+* 1+ Years Professional Experience
+* 4+ Projects Delivered
+* 1 Appian Certification
+* 2 Professional Roles
+
+---
+
+# Skills Section
+
+Create animated skill cards.
+
+## Appian
+
+* SAIL Interfaces
+* Process Models
+* Records
+* Portals
+* CDTs
+* Integrations
+
+## Technical Skills
+
+* SQL
+* MySQL
+* MariaDB
+* Python
+* HTML
+* CSS
+* REST APIs
+
+## Business Skills
+
+* Requirement Analysis
+* Stakeholder Management
+* Agile/Scrum
+* Process Optimization
+* Workflow Automation
+
+## AI Skills
+
+* AI-Assisted Development
+* Prompt Engineering
+* Workflow Documentation
+
+---
+
+# Experience Timeline
+
+## Associate Technical Consultant
+
+WNS Vuram
+
+June 2025 - Present
+
+Responsibilities:
+
+* Develop enterprise applications using Appian
+* Design workflows and process models
+* Build responsive interfaces using Appian SAIL
+* Configure Records, CDTs, and Data Stores
+* Collaborate with Business Analysts and Senior Developers
+* Resolve production defects and support deployments
+
+---
+
+## Program Management Specialist Trainee
+
+IAMNEO
+
+January 2025 - May 2025
+
+Responsibilities:
+
+* Managed university assessment workflows
+* Coordinated content validation
+* Performed quality assurance checks
+* Worked with multiple stakeholders
+
+---
+
+# Projects Section
+
+Create premium project cards.
+
+## Project Quality Governance Application
+
+Built an internal auditing solution for Delivery Managers to assess project quality and governance compliance.
+
+Technologies:
+
+* Appian
+* SQL
+* Process Models
+* SAIL
+
+Features:
+
+* Audit workflows
+* Automated scoring
+* Reporting dashboards
+
+---
+
+## Legal Entity Onboarding
+
+Developed a proof-of-concept onboarding platform for investment operations teams.
+
+Features:
+
+* Entity registration
+* Multi-stage approvals
+* Workflow automation
+
+---
+
+## Delivery Management Workflow
+
+Created a workflow solution connecting Production, Creative, and Media teams.
+
+Features:
+
+* Automated approval chain
+* Status tracking
+* Cross-team collaboration
+
+---
+
+## AI-Powered Turf Booking Application
+
+Built a complete booking application using AI-assisted development.
+
+Features:
+
+* Slot booking
+* User management
+* AI-driven development process
+
+---
+
+# Certification Section
+
+Feature card with certificate image.
+
+Title:
+
+Appian Certified Associate Developer
+
+Awarded:
+
+May 2026
+
+Valid Through:
+
+November 2027
+
+Description:
+
+Certified in Appian application development, workflow automation, process modeling, and enterprise solution delivery.
+
+---
+
+# Education Section
+
+Bachelor of Engineering
+
+Computer Science and Engineering
+
+Bannari Amman Institute of Technology
+
+CGPA: 7.55
+
+---
+
+# Career Journey Section
+
+Visual timeline:
+
+Childhood Interest in Software
+
+↓
+
+Computer Science Engineering
+
+↓
+
+Campus Placement at IAMNEO
+
+↓
+
+Program Management Operations
+
+↓
+
+Campus Placement at WNS Vuram
+
+↓
+
+Associate Technical Consultant
+
+↓
+
+Future Goal: Technical Consultant / Business Analyst / Program Manager
+
+---
+
+# Future Aspirations Section
+
+I am passionate about bridging the gap between business and technology.
+
+My long-term goal is to grow into:
+
+* Technical Consulting
+* Business Analysis
+* Program Management
+* Digital Transformation Leadership
+
+---
+
+# Contact Section
+
+Email
+
+Phone
+
+LinkedIn
+
+Resume Download
+
+Add a modern contact form.
+
+---
+
+# Additional Requirements
+
+* Sticky navigation bar
+* Dark/light mode toggle
+* Resume download button
+* Scroll animations
+* SEO metadata
+* Professional footer
+* Modern hover effects
+* Smooth page transitions
+* Accessibility compliant
+* Performance optimized
+
+Build this as a production-ready portfolio website suitable for recruiters, hiring managers, and consulting opportunities.
+
+---
+
+For the best result:
+
+1. Upload your profile photo.
+2. Upload your Appian certificate.
+3. Upload your resume PDF.
+4. Paste this prompt into Lovable or Bolt.
+5. Replace placeholders with your actual files.
+
+This should generate a polished portfolio that is significantly stronger than a standard resume and aligned with your goal of moving toward Technical Consulting, Business Analysis, and Program Management roles. 🚀
