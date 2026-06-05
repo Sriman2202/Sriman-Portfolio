@@ -73,14 +73,18 @@ export function Contact() {
                 href="https://www.linkedin.com/in/srimanshanmugam"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1"
+                className="flex-1 cursor-pointer hover:scale-105 active:scale-95 transition-transform duration-200"
               >
-                <Button className="w-full rounded-xl">
+                <Button className="w-full rounded-xl pointer-events-none">
                   <Linkedin className="w-4 h-4 mr-2" /> LinkedIn
                 </Button>
               </a>
-              <a href="/sriman-resume.pdf" download="Sriman_S_Resume.pdf" className="flex-1">
-                <Button variant="outline" className="w-full rounded-xl">
+              <a
+                href="/sriman-resume.pdf"
+                download="Sriman_S_Resume.pdf"
+                className="flex-1 cursor-pointer hover:scale-105 active:scale-95 transition-transform duration-200"
+              >
+                <Button variant="outline" className="w-full rounded-xl pointer-events-none">
                   <Download className="w-4 h-4 mr-2" /> Resume
                 </Button>
               </a>

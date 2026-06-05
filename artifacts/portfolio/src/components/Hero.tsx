@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
-import { Download, Mail, Linkedin } from "lucide-react";
+import { Download, Mail, Linkedin, Lightbulb, Target, Users, Zap } from "lucide-react";
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
 import profilePic from "@assets/Profile_Pic_1780658107623.jpeg";
 
-const badgeClass = "px-3 py-1.5 text-sm font-medium border-primary/30 bg-primary/8 text-primary";
-
 const btnHover = "hover:scale-105 active:scale-95 transition-transform duration-200";
+
+const GOALS = [
+  { title: "Technical Consulting", icon: <Lightbulb className="w-5 h-5" /> },
+  { title: "Business Analysis", icon: <Target className="w-5 h-5" /> },
+  { title: "Program Management", icon: <Users className="w-5 h-5" /> },
+  { title: "Digital Transformation Leadership", icon: <Zap className="w-5 h-5" /> },
+];
 
 export function Hero() {
   const scrollToContact = () => {
@@ -67,7 +71,6 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
-            {/* Download Resume — file link */}
             <a
               href="/sriman-resume.pdf"
               download="Sriman_S_Resume.pdf"
@@ -78,7 +81,6 @@ export function Hero() {
               </Button>
             </a>
 
-            {/* LinkedIn — external link */}
             <a
               href="https://www.linkedin.com/in/srimanshanmugam"
               target="_blank"
@@ -90,29 +92,40 @@ export function Hero() {
               </Button>
             </a>
 
-            {/* Contact Me — card-styled scroll button */}
             <button
               onClick={scrollToContact}
               className={`inline-flex items-center gap-2 px-8 min-h-10 rounded-full text-sm font-medium
-                bg-card border border-border shadow-sm text-foreground
+                bg-card border border-border shadow-sm text-foreground cursor-pointer
                 hover:border-primary/50 hover:bg-primary/5 hover:text-primary
-                active:scale-95 transition-all duration-200 cursor-pointer ${btnHover}`}
+                ${btnHover}`}
             >
               <Mail className="h-4 w-4" /> Contact Me
             </button>
           </motion.div>
 
+          {/* Aspirations */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-3 max-w-3xl"
+            className="w-full max-w-3xl"
           >
-            <Badge variant="secondary" className={badgeClass}>Appian Certified Associate Developer</Badge>
-            <Badge variant="secondary" className={badgeClass}>Enterprise Application Development</Badge>
-            <Badge variant="secondary" className={badgeClass}>Workflow Automation</Badge>
-            <Badge variant="secondary" className={badgeClass}>Technical Consulting Aspirant</Badge>
+            <p className="text-base text-muted-foreground italic mb-6">
+              "I am passionate about bridging the gap between business and technology."
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {GOALS.map((goal, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center gap-2 p-4 rounded-xl bg-card border border-border hover:border-primary/40 hover:bg-primary/5 transition-colors duration-200"
+                >
+                  <span className="p-2 bg-primary/10 text-primary rounded-full">{goal.icon}</span>
+                  <span className="text-xs font-semibold text-foreground text-center leading-snug">{goal.title}</span>
+                </div>
+              ))}
+            </div>
           </motion.div>
+
         </div>
       </div>
     </section>
