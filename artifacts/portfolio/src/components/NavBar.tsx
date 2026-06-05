@@ -42,7 +42,7 @@ export function NavBar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div
-            className="text-xl font-bold font-serif tracking-tight text-foreground cursor-pointer"
+            className="text-xl font-bold font-serif tracking-tight text-foreground cursor-pointer hover:text-primary transition-colors duration-200"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Sriman <span className="text-primary">S</span>.
@@ -54,7 +54,7 @@ export function NavBar() {
               <button
                 key={link.name}
                 onClick={() => scrollTo(link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm font-bold text-primary cursor-pointer hover:opacity-70 hover:scale-105 active:scale-95 transition-all duration-200"
               >
                 {link.name}
               </button>
@@ -67,6 +67,7 @@ export function NavBar() {
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="hover:scale-110 active:scale-95 transition-transform duration-200"
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -81,7 +82,7 @@ export function NavBar() {
             <button
               key={link.name}
               onClick={() => scrollTo(link.href)}
-              className="text-left text-sm font-medium text-foreground py-2 hover:text-primary transition-colors"
+              className="text-left text-sm font-bold text-primary py-2 hover:opacity-70 transition-opacity cursor-pointer"
             >
               {link.name}
             </button>

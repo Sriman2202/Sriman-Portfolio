@@ -6,6 +6,8 @@ import profilePic from "@assets/Profile_Pic_1780658107623.jpeg";
 
 const badgeClass = "px-3 py-1.5 text-sm font-medium border-primary/30 bg-primary/8 text-primary";
 
+const btnHover = "hover:scale-105 active:scale-95 transition-transform duration-200";
+
 export function Hero() {
   const scrollToContact = () => {
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
@@ -17,10 +19,10 @@ export function Hero() {
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="container px-4 mx-auto z-10 relative">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -32,7 +34,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -40,7 +42,7 @@ export function Hero() {
           >
             Sriman S
           </motion.h1>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -49,7 +51,7 @@ export function Hero() {
           >
             Associate Technical Consultant
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,26 +60,46 @@ export function Hero() {
           >
             Building enterprise workflow solutions and helping organizations streamline business processes through low-code technology.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
-            <a href="/sriman-resume.pdf" download="Sriman_S_Resume.pdf">
-              <Button size="lg" className="rounded-full shadow-lg shadow-primary/20">
+            {/* Download Resume — file link */}
+            <a
+              href="/sriman-resume.pdf"
+              download="Sriman_S_Resume.pdf"
+              className={`cursor-pointer ${btnHover}`}
+            >
+              <Button size="lg" className="rounded-full shadow-lg shadow-primary/20 pointer-events-none">
                 <Download className="mr-2 h-4 w-4" /> Download Resume
               </Button>
             </a>
-            <a href="https://www.linkedin.com/in/srimanshanmugam" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="rounded-full bg-card hover:bg-card/80">
+
+            {/* LinkedIn — external link */}
+            <a
+              href="https://www.linkedin.com/in/srimanshanmugam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`cursor-pointer ${btnHover}`}
+            >
+              <Button size="lg" variant="outline" className="rounded-full bg-card pointer-events-none">
                 <Linkedin className="mr-2 h-4 w-4" /> Connect on LinkedIn
               </Button>
             </a>
-            <Button size="lg" variant="ghost" className="rounded-full" onClick={scrollToContact}>
-              <Mail className="mr-2 h-4 w-4" /> Contact Me
-            </Button>
+
+            {/* Contact Me — card-styled scroll button */}
+            <button
+              onClick={scrollToContact}
+              className={`inline-flex items-center gap-2 px-8 min-h-10 rounded-full text-sm font-medium
+                bg-card border border-border shadow-sm text-foreground
+                hover:border-primary/50 hover:bg-primary/5 hover:text-primary
+                active:scale-95 transition-all duration-200 cursor-pointer ${btnHover}`}
+            >
+              <Mail className="h-4 w-4" /> Contact Me
+            </button>
           </motion.div>
 
           <motion.div
