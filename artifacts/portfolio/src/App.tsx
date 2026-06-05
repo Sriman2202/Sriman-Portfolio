@@ -1,13 +1,11 @@
 import { NavBar } from "./components/NavBar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
-import { Stats } from "./components/Stats";
 import { Skills } from "./components/Skills";
 import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
 import { Certification } from "./components/Certification";
 import { Education } from "./components/Education";
-import { CareerJourney } from "./components/CareerJourney";
 import { Aspirations } from "./components/Aspirations";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
@@ -22,13 +20,11 @@ function App() {
         <main className="flex-1">
           <Hero />
           <About />
-          <Stats />
           <Skills />
           <Experience />
           <Projects />
           <Certification />
           <Education />
-          <CareerJourney />
           <Aspirations />
           <Contact />
         </main>

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Download, Mail, Linkedin, ArrowRight } from "lucide-react";
+import { Download, Mail, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import profilePic from "@assets/Profile_Pic_1780658107623.jpeg";
 
 export function Hero() {
   return (
@@ -20,8 +21,8 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="mb-8"
           >
-            <div className="w-32 h-32 rounded-full bg-card border-2 border-primary flex items-center justify-center shadow-xl shadow-primary/10">
-              <span className="text-4xl font-serif font-bold text-primary tracking-tighter">SS</span>
+            <div className="w-32 h-32 rounded-full border-2 border-primary shadow-xl shadow-primary/10 overflow-hidden">
+              <img src={profilePic} alt="Sriman S" className="w-full h-full object-cover object-top" />
             </div>
           </motion.div>
 
@@ -40,7 +41,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-2xl md:text-3xl text-muted-foreground font-medium mb-6"
           >
-            Associate Technical Consultant <span className="text-primary hidden md:inline-block">|</span><br className="md:hidden"/> Appian Developer
+            Associate Technical Consultant
           </motion.h2>
           
           <motion.p

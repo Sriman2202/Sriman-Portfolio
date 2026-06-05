@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, Download, Send } from "lucide-react";
+import { Mail, Linkedin, Download, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -15,7 +15,6 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
@@ -58,34 +57,33 @@ export function Contact() {
             </div>
 
             <div className="space-y-4">
-              <a href="mailto:sriman@example.com" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group">
+              <a href="mailto:srimanshanmugam22@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group">
                 <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <Mail className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground font-medium">Email</p>
-                  <p className="text-foreground font-medium">sriman@example.com</p>
-                </div>
-              </a>
-              
-              <a href="tel:+1234567890" className="flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group">
-                <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground font-medium">Phone</p>
-                  <p className="text-foreground font-medium">+1 (234) 567-890</p>
+                  <p className="text-foreground font-medium">srimanshanmugam22@gmail.com</p>
                 </div>
               </a>
             </div>
 
             <div className="flex gap-4">
-              <Button className="flex-1 rounded-xl">
-                <Linkedin className="w-4 h-4 mr-2" /> LinkedIn
-              </Button>
-              <Button variant="outline" className="flex-1 rounded-xl">
-                <Download className="w-4 h-4 mr-2" /> Resume
-              </Button>
+              <a
+                href="https://www.linkedin.com/in/srimanshanmugam"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <Button className="w-full rounded-xl">
+                  <Linkedin className="w-4 h-4 mr-2" /> LinkedIn
+                </Button>
+              </a>
+              <a href="/sriman-resume.pdf" download="Sriman_S_Resume.pdf" className="flex-1">
+                <Button variant="outline" className="w-full rounded-xl">
+                  <Download className="w-4 h-4 mr-2" /> Resume
+                </Button>
+              </a>
             </div>
           </motion.div>
 
@@ -100,24 +98,23 @@ export function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="John Doe" required className="bg-background border-border focus-visible:ring-primary" />
+                  <Input id="name" required className="bg-background border-border focus-visible:ring-primary" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@example.com" required className="bg-background border-border focus-visible:ring-primary" />
+                  <Input id="email" type="email" required className="bg-background border-border focus-visible:ring-primary" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="subject">Subject</Label>
-                <Input id="subject" placeholder="Opportunity for Technical Consultant" required className="bg-background border-border focus-visible:ring-primary" />
+                <Input id="subject" required className="bg-background border-border focus-visible:ring-primary" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Hi Sriman, I'd like to discuss..." 
-                  rows={5} 
-                  required 
+                <Textarea
+                  id="message"
+                  rows={5}
+                  required
                   className="bg-background border-border focus-visible:ring-primary resize-none"
                 />
               </div>

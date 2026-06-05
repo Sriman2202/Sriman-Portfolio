@@ -11,7 +11,7 @@ const SKILL_CATEGORIES = [
   {
     title: "Technical Skills",
     icon: <Code className="w-6 h-6 text-primary" />,
-    skills: ["SQL", "MySQL", "MariaDB", "Python", "HTML", "CSS", "REST APIs"],
+    skills: ["SQL", "MySQL", "MariaDB", "Python", "HTML", "CSS", "MS Excel", "Power BI"],
   },
   {
     title: "Business Skills",

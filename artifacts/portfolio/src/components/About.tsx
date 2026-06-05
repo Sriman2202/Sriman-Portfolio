@@ -24,7 +24,7 @@ export function About() {
               This passion led me to pursue Computer Science Engineering and build a career in software development. I started my professional journey through campus placement at IAMNEO, where I gained experience in program management operations and stakeholder coordination. Shortly afterward, I joined WNS Vuram as an Associate Technical Consultant, where I work on Appian-based enterprise applications, workflow automation, and business process optimization.
             </p>
             <p>
-              I aspire to grow into Technical Consulting, Business Analysis, and Program Management roles where I can combine technology, business understanding, and stakeholder collaboration to drive meaningful outcomes.
+              I aspire to grow into Appian Developer, Technical Consulting, Business Analysis, and Program Management roles where I can combine technology, business understanding, and stakeholder collaboration to drive meaningful outcomes.
             </p>
           </div>
         </motion.div>
