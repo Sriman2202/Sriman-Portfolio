@@ -42,13 +42,11 @@ export function NavBar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div
-            className={`text-xl font-bold font-serif tracking-tight cursor-pointer transition-colors duration-300 hover:opacity-80 ${
-              isScrolled ? "text-white" : "text-foreground"
-            }`}
+            className={`text-xl font-bold font-serif tracking-tight cursor-pointer transition-colors duration-300 hover:opacity-80 text-white`}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Sriman{" "}
-            <span className={isScrolled ? "text-white/70" : "text-primary"}>S</span>.
+            <span className="text-white/60">S</span>.
           </div>
 
           {/* Desktop Nav */}
@@ -57,11 +55,7 @@ export function NavBar() {
               <button
                 key={link.name}
                 onClick={() => scrollTo(link.href)}
-                className={`text-sm font-bold cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 ${
-                  isScrolled
-                    ? "text-white hover:text-white/70"
-                    : "text-primary hover:opacity-70"
-                }`}
+                className="text-sm font-bold cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 text-white hover:text-white/70"
               >
                 {link.name}
               </button>
@@ -74,9 +68,7 @@ export function NavBar() {
               variant="ghost"
               size="icon"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`hover:scale-110 active:scale-95 transition-transform duration-200 ${
-                isScrolled ? "text-white hover:bg-white/10" : ""
-              }`}
+              className="text-white hover:bg-white/10 hover:scale-110 active:scale-95 transition-transform duration-200"
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -87,19 +79,13 @@ export function NavBar() {
       {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div
-          className={`md:hidden absolute top-full left-0 right-0 border-b shadow-lg p-4 flex flex-col space-y-4 ${
-            isScrolled
-              ? "bg-[hsl(220,68%,22%)] border-white/10"
-              : "bg-background border-border"
-          }`}
+          className="md:hidden absolute top-full left-0 right-0 border-b border-white/10 shadow-lg p-4 flex flex-col space-y-4 bg-[hsl(220,68%,18%)]"
         >
           {NAV_LINKS.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollTo(link.href)}
-              className={`text-left text-sm font-bold py-2 transition-opacity cursor-pointer hover:opacity-70 ${
-                isScrolled ? "text-white" : "text-primary"
-              }`}
+              className="text-left text-sm font-bold py-2 transition-opacity cursor-pointer hover:opacity-70 text-white"
             >
               {link.name}
             </button>
