@@ -14,12 +14,15 @@ const NAV_LINKS = [
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -39,6 +42,18 @@ export function NavBar() {
           : "bg-transparent py-5"
       }`}
     >
+      {/* Scroll progress bar */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] z-10">
+        <div
+          className="h-full transition-all duration-75 ease-out"
+          style={{
+            width: `${scrollProgress}%`,
+            background: "linear-gradient(90deg, hsl(175,90%,50%), hsl(195,90%,60%), hsl(220,80%,65%))",
+            boxShadow: "0 0 8px hsl(185,90%,55%)",
+          }}
+        />
+      </div>
+
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div
